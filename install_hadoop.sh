@@ -1,5 +1,12 @@
 #!/usr/bin/bash
 
+# Ask if the user is ready to install
+read -p "Are you ready to install Docker and Hadoop? (y/n): " confirm_install
+if [[ "$confirm_install" != "y" && "$confirm_install" != "Y" ]]; then
+    echo "Installation aborted."
+    exit 0
+fi
+
 # Reconfigure any unpacked but unconfigured packages
 if ! sudo dpkg --configure -a; then
     echo "dpkg encountered an error. Exiting."
@@ -34,6 +41,13 @@ fi
 if ! sudo docker pull sequenceiq/hadoop-docker:2.7.1; then
     echo "Failed to pull Hadoop Docker image. Exiting."
     exit 1
+fi
+
+# Ask if the user wants to start Hadoop
+read -p "Do you want to start Hadoop now? (y/n): " confirm_start
+if [[ "$confirm_start" != "y" && "$confirm_start" != "Y" ]]; then
+    echo "Hadoop installation completed, but Hadoop was not started."
+    exit 0
 fi
 
 # Run the Docker container using start-hadoop script
