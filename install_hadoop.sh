@@ -37,7 +37,7 @@ if ! sudo docker pull sequenceiq/hadoop-docker:2.7.1; then
 fi
 
 # Run the Docker container in detached mode
-if ! sudo docker run -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash; then
+if ! start-hadoop; then
     echo "Failed to run the Docker container. Exiting."
     exit 1
 fi
