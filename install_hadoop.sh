@@ -2,11 +2,18 @@
 
 # Reconfigure any unpacked but unconfigured packages
 if ! sudo dpkg --configure -a; then
-    echo "dpkg encountered an error."
+    echo "dpkg encountered an error. Exiting."
+    exit 1
 fi
 
-# Updating system and installing Docker
-if ! sudo apt-get update || ! sudo apt-get install -y docker.io; then
+# Update the system
+if ! sudo apt-get update; then
+    echo "Failed to update system with apt. Exiting."
+    exit 1
+fi
+
+# Install Docker with apt, fallback to snap if apt fails
+if ! sudo apt-get install -y docker.io; then
     echo "apt failed to install Docker, attempting snap installation."
     if ! command -v snap &> /dev/null; then
         echo "Snap is not installed. Exiting."
@@ -17,11 +24,22 @@ if ! sudo apt-get update || ! sudo apt-get install -y docker.io; then
     fi
 fi
 
-# Copying the start-hadoop script to /usr/local/bin
-sudo cp start-hadoop /usr/local/bin
+# Copy the start-hadoop script to /usr/local/bin
+if ! sudo cp start-hadoop /usr/local/bin; then
+    echo "Failed to copy start-hadoop to /usr/local/bin. Exiting."
+    exit 1
+fi
 
-# Pulling the Hadoop Docker Image
-sudo docker pull sequenceiq/hadoop-docker:2.7.1
+# Pull the Hadoop Docker image
+if ! sudo docker pull sequenceiq/hadoop-docker:2.7.1; then
+    echo "Failed to pull Hadoop Docker image. Exiting."
+    exit 1
+fi
 
-# Running the Container
-sudo docker run -it -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
+# Run the Docker container in detached mode
+if ! sudo docker run -d -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash; then
+    echo "Failed to run the Docker container. Exiting."
+    exit 1
+fi
+
+echo "All commands executed successfully. Docker container is running in detached mode."
