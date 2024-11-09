@@ -33,9 +33,7 @@ sudo chmod +x start-hadoop && sudo cp start-hadoop /usr/local/bin/
 Use the start-hadoop command to start Hadoop next time you want to run it (if you set up the script).
 Else, you have to enter:
 
-sudo docker run -it -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
-
-To change port numbers: Edit /usr/local/bin/start-hadoop. Remember to use the new port numbers when accessing the web interfaces.
+sudo docker run -it -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
 
 # Checking Docker Sessions:
 
