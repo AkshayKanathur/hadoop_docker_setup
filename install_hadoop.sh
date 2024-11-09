@@ -8,6 +8,8 @@
 # sudo apt-get install -y docker.io && \
 sudo snap install -y docker && \
 
+sudo cp start-hadoop /usr/local/bin && \
+
 # Pulling the Hadoop Docker Image
 sudo docker pull sequenceiq/hadoop-docker:2.7.1 && \
 
