@@ -1,11 +1,12 @@
 #!/usr/bin/bash
 
 # Reconfigure any unpacked but unconfigured packages
-sudo dpkg --configure -a && \
+# sudo dpkg --configure -a && \
 
 # Updating system and installing Docker
-sudo apt-get update && \
-sudo apt-get install -y docker.io && \
+# sudo apt-get update && \
+# sudo apt-get install -y docker.io && \
+sudo snap install -y docker && \
 
 # Pulling the Hadoop Docker Image
 sudo docker pull sequenceiq/hadoop-docker:2.7.1 && \
