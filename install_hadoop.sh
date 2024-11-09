@@ -41,5 +41,3 @@ if ! sudo docker run -d -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7
     echo "Failed to run the Docker container. Exiting."
     exit 1
 fi
-
-echo "All commands executed successfully. Docker container is running in detached mode."
