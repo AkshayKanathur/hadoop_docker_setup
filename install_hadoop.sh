@@ -5,7 +5,7 @@
 
 # Updating system and installing Docker
 # sudo apt-get update && \
-# sudo apt-get install -y docker.io && \
+sudo apt-get install -y docker.io || \
 sudo snap install -y docker && \
 
 sudo cp start-hadoop /usr/local/bin && \
