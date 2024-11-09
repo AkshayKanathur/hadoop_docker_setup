@@ -8,7 +8,13 @@ fi
 # Updating system and installing Docker
 if ! sudo apt-get update || ! sudo apt-get install -y docker.io; then
     echo "apt failed to install Docker, attempting snap installation."
-    sudo snap install docker
+    if ! command -v snap &> /dev/null; then
+        echo "Snap is not installed. Exiting."
+        exit 1
+    elif ! sudo snap install docker; then
+        echo "Snap failed to install Docker. Exiting."
+        exit 1
+    fi
 fi
 
 # Copying the start-hadoop script to /usr/local/bin
