@@ -1,5 +1,5 @@
 ## Running the script
-```bash
+```copy
 cd hadoop_docker_setup
 chmod +x *
 ./install_hadoop.sh
