@@ -14,9 +14,9 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 ```
 ## Accessing Web Interfaces:
 
-Visit the NameNode Web UI: http://localhost:50070
+- Visit the NameNode Web UI: http://localhost:50070
 
-Visit the Resource Manager Web UI: http://localhost:8088
+- Visit the Resource Manager Web UI: http://localhost:8088
 
 ## Setup Script to Start Hadoop (Optional):
 
