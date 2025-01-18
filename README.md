@@ -1,7 +1,7 @@
 ## Running the script
 ```bash
-cd hadoop_docker_setup
-chmod +x *
+cd hadoop_docker_setup
+chmod +x *
 ./install_hadoop.sh
 ```
 ## Set Hadoop Environment Variables:
