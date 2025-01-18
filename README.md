@@ -50,7 +50,7 @@ sudo docker exec -it container_name /bin/bash
 ```
 If the container is stopped, start it first:
 ```bash
-sudo docker start container_name
+sudo docker start container_name
 sudo docker exec -it container_name /bin/bash
 ```
 ## Renaming a Docker Container:
