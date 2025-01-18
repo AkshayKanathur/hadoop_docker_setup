@@ -1,4 +1,4 @@
-# Running the script
+## Running the script
 
 cd hadoop_docker_setup
 
@@ -6,7 +6,7 @@ chmod +x *
 
 ./install_hadoop.sh
 
-# Set Hadoop Environment Variables:
+## Set Hadoop Environment Variables:
 
 After opening the Hadoop bash shell, paste these commands:
 
@@ -16,19 +16,19 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
-# Accessing Web Interfaces:
+## Accessing Web Interfaces:
 
 Visit the NameNode Web UI: http://localhost:50070
 
 Visit the Resource Manager Web UI: http://localhost:8088
 
-# Setup Script to Start Hadoop (Optional):
+## Setup Script to Start Hadoop (Optional):
 
 To make the start-hadoop script executable and move it to /usr/local/bin/, run:
 
 sudo chmod +x start-hadoop && sudo cp start-hadoop /usr/local/bin/
 
-# Starting Hadoop:
+## Starting Hadoop:
 
 Use the start-hadoop command to start Hadoop next time you want to run it (if you set up the script).
 
@@ -36,7 +36,7 @@ Else, you have to enter:
 
 sudo docker run -it -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
 
-# Checking Docker Sessions:
+## Checking Docker Sessions:
 
 To view all running Docker containers, use:
 
@@ -46,7 +46,7 @@ To view all containers (including stopped ones), use:
 
 sudo docker ps -a
 
-# Reconnecting to a Previous Docker Session:
+## Reconnecting to a Previous Docker Session:
 
 To reconnect to a running Hadoop container (replace "container_name" with the actual name, e.g., serene_wilson):
 
@@ -58,7 +58,7 @@ sudo docker start container_name
 
 sudo docker exec -it container_name /bin/bash
 
-# Renaming a Docker Container:
+## Renaming a Docker Container:
 
 To rename a Docker container, use the following command:
 
@@ -70,7 +70,7 @@ sudo docker rename serene_wilson hadoop_container
 
 After renaming, use the new container name for commands.
 
-# Uploading a File from Local to Docker Container:
+## Uploading a File from Local to Docker Container:
 
 To copy a file from your local machine to a running Docker container, use:
 
