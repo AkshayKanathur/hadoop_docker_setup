@@ -27,7 +27,7 @@ sudo chmod +x start-hadoop && sudo cp start-hadoop /usr/local/bin/
 ```
 ### Starting Hadoop:
 
-Use the start-hadoop command to start Hadoop next time you want to run it (if you set up the script).
+Use the "start-hadoop" command to start Hadoop next time you want to run it (if you set up the script).
 
 Else, you have to enter:
 ```bash
