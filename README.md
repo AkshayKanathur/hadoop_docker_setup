@@ -40,7 +40,7 @@ To view all running Docker containers, use:
 sudo docker ps
 ```
 To view all containers (including stopped ones), use:
-bash```
+```bash
 sudo docker ps -a
 ```
 ### Reconnecting to a Previous Docker Session:
