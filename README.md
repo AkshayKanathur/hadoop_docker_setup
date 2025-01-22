@@ -36,9 +36,9 @@ sudo docker run -it -p 50070:50070 -p 8088:8088 sequenceiq/hadoop-docker:2.7.1 /
 ### Checking Docker Sessions:
 
 To view all running Docker containers, use:
-
+bash```
 sudo docker ps
-
+```
 To view all containers (including stopped ones), use:
 ```bash
 sudo docker ps -a
