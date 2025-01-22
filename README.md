@@ -40,7 +40,7 @@ bash```
 sudo docker ps
 ```
 To view all containers (including stopped ones), use:
-```bash
+bash```
 sudo docker ps -a
 ```
 ### Reconnecting to a Previous Docker Session:
