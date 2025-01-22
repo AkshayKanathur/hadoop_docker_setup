@@ -1,11 +1,11 @@
-## Running the script
+### Running the script
 ```bash
 git clone https://github.com/AkshayKanathur/hadoop_docker_setup
 cd hadoop_docker_setup
 chmod +x *
 ./install_hadoop.sh
 ```
-## Set Hadoop Environment Variables:
+### Set Hadoop Environment Variables:
 
 After opening the Hadoop bash shell, paste these commands:
 ```bash
