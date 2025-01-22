@@ -1,5 +1,6 @@
 ## Running the script
 ```bash
+git clone https://github.com/AkshayKanathur/hadoop_docker_setup
 cd hadoop_docker_setup
 chmod +x *
 ./install_hadoop.sh
